@@ -1,0 +1,26 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type AuthResponse {
+  access_token: String!
+}
+
+type Mutation {
+  createUser(password: String!, phoneNumber: String!, username: String!): User!
+  deleteUser(id: Int!): Boolean!
+  generateOTP(phoneNumber: String!): Boolean!
+  login(password: String!, username: String!): AuthResponse!
+  verifyOTP(otpCode: String!, phoneNumber: String!): Boolean!
+}
+
+type Query {
+  getUsers: [User!]!
+}
+
+type User {
+  id: Int!
+  password: String!
+  phoneNumber: String!
+  username: String!
+}
